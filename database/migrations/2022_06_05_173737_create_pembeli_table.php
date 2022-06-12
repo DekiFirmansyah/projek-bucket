@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminTable extends Migration
+class CreatePembeliTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
+        Schema::create('pembeli', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->nullable()->unique();
-            $table->string('password');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('nama');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('jenis_kelamin');
+            $table->string('email');
             $table->string('alamat');
             $table->string('no_telp');
-            $table->rememberToken();
+            $table->string('foto');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -34,6 +34,6 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('pembeli');
     }
 }

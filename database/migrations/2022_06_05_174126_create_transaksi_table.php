@@ -15,11 +15,14 @@ class CreateTransaksiTable extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('pembeli_id')->nullable();
+            $table->unsignedBigInteger('barang_id')->nullable(); 
             $table->integer('jumlah');
             $table->integer('jumlah_tambah');
-            $table->integer('tota_harga');
-            $table->string('tgl_transaksi');
+            $table->integer('total_harga');
             $table->timestamps();
+            $table->foreign('pembeli_id')->references('id')->on('pembeli');
+            $table->foreign('barang_id')->references('id')->on('barang');
         });
     }
 
