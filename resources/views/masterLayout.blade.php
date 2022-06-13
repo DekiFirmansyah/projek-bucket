@@ -97,26 +97,20 @@
           <li><a href="#">accesories</a></li>
           <li><a href="#">flower gifts</a></li>
           <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
           <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
           <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
-          <li><a href="#">accesories</a></li>
           <li><a href="#">flower gifts</a></li>
           <li><a href="#">specials</a></li>
         </ul>
         <div class="title"><span class="title_icon"><img src="images/bullet6.gif" alt="" /></span>Partners</div>
         <ul class="list">
-          <li><a href="#">accesories</a></li>
+        <li><a href="#">accesories</a></li>
           <li><a href="#">flower gifts</a></li>
           <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
           <li><a href="#">accesories</a></li>
+          <li><a href="#">specials</a></li>
           <li><a href="#">flower gifts</a></li>
           <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
-          <li><a href="#">accesories</a></li>
         </ul>
       </div>
     </div>
