@@ -69,8 +69,6 @@
     </div>
     <!--end of left content-->
     <div class="right_content">
-      <div class="languages_box"> <span class="red">Languages:</span> <a href="#" class="selected"><img src="images/gb.gif" alt="" border="0" /></a> <a href="#"><img src="images/fr.gif" alt="" border="0" /></a> <a href="#"><img src="images/de.gif" alt="" border="0" /></a> </div>
-      <div class="currency"> <span class="red">Currency: </span> <a href="#">GBP</a> <a href="#">EUR</a> <a href="#" class="selected">USD</a> </div>
       <div class="cart">
         <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" /></span>My cart</div>
         <div class="home_cart_content"> 3 x items | <span class="red">TOTAL: 100$</span> </div>
