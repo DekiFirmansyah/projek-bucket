@@ -25,7 +25,7 @@ class TokoController extends Controller
      */
     public function create()
     {
-        //
+        return view('toko.create');
     }
 
     /**
@@ -36,7 +36,22 @@ class TokoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_toko' => 'required',
+            'email' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+        ]);
+
+        $toko = new Toko;
+        $toko->nama = $request->get('nama_toko');
+        $toko->email = $request->get('email');
+        $toko->alamat = $request->get('alamat');
+        $toko->no_telp = $request->get('no_telp');
+        $toko->save();
+
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('toko.index')->with('success', 'Toko Berhasil Ditambahkan');
     }
 
     /**
@@ -47,7 +62,8 @@ class TokoController extends Controller
      */
     public function show($id)
     {
-        //
+        $toko = Toko::where('id', $id)->first();
+        return view('toko.detail', compact('toko'));
     }
 
     /**
@@ -58,7 +74,8 @@ class TokoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $toko = Toko::where('id', $id)->first();
+        return view('toko.edit', compact('toko'));
     }
 
     /**
@@ -70,7 +87,22 @@ class TokoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_toko' => 'required',
+            'email' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+        ]);
+
+        $toko = Toko::where('id', $id)->first();
+        $toko->nama = $request->get('nama_toko');
+        $toko->email = $request->get('email');
+        $toko->alamat = $request->get('alamat');
+        $toko->no_telp = $request->get('no_telp');
+        $toko->save();
+
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('toko.index')->with('success', 'Toko Berhasil Ditambahkan');
     }
 
     /**
@@ -78,9 +110,9 @@ class TokoController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+    
+    * public function destroy($id)
+    *{
+    *}
      */
-    public function destroy($id)
-    {
-        //
-    }
 }
