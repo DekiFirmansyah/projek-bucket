@@ -13,7 +13,9 @@ class PembeliController extends Controller
      */
     public function index()
     {
-        //
+        $pembeli = Pembeli::all(); // Mengambil semua isi tabel
+        $paginate = Pembeli::orderBy('id', 'asc')->paginate(3);
+        return view('pembeli.index', ['pembeli' => $pembeli,'paginate'=>$paginate]);
     }
 
     /**
@@ -23,7 +25,7 @@ class PembeliController extends Controller
      */
     public function create()
     {
-        //
+        return view('pembeli.create');
     }
 
     /**
@@ -34,7 +36,30 @@ class PembeliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
+            'email' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+            'foto' => 'required',
+        ]);
+        
+        if($request->file('foto')){
+            $image_name = $request->file('foto')->store('image', 'public');
+        }
+
+        $pembeli = new Pembeli;
+        $pembeli->nama = $request->get('Nama');
+        $pembeli->jenis_kelamin = $request->get('jenis_kelamin');
+        $pembeli->email = $request->get('email');
+        $pembeli->alamat = $request->get('alamat');
+        $pembeli->no_telp = $request->get('no_telp');
+        $pembeli->foto = $image_name;
+        $pembeli->save();
+
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil Ditambahkan');
     }
 
     /**
@@ -45,7 +70,8 @@ class PembeliController extends Controller
      */
     public function show($id)
     {
-        //
+        $pembeli = Pembeli::where('id', $id)->first();
+        return view('pembeli.detail', compact('pembeli'));
     }
 
     /**
@@ -56,7 +82,8 @@ class PembeliController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pembeli = Pembeli::where('id', $id)->first();
+        return view('pembeli.edit', compact('pembeli'));
     }
 
     /**
@@ -68,7 +95,35 @@ class PembeliController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
+            'email' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+            'foto' => 'required',
+        ]);
+        
+        if($request->file('foto')){
+            $image_name = $request->file('foto')->store('image', 'public');
+        }
+
+        $pembeli = Pembeli::where('id', $id)->first();
+        $pembeli->nama = $request->get('Nama');
+        $pembeli->jenis_kelamin = $request->get('jenis_kelamin');
+        $pembeli->email = $request->get('email');
+        $pembeli->alamat = $request->get('alamat');
+        $pembeli->no_telp = $request->get('no_telp');
+        if($pembeli->foto && file_exists(storage_path('./app/public/'. $pembeli->foto))){
+            Storage::delete(['./public/', $pembeli->foto]);
+        }
+
+        $image_name = $request->file('foto')->store('image', 'public');
+        $pembeli->foto = $image_name;
+        $pembeli->save();
+
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil Ditambahkan');
     }
 
     /**
@@ -79,6 +134,7 @@ class PembeliController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pembeli::where('id', $id)->delete();
+        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil Dihapus');
     }
 }

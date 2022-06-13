@@ -25,7 +25,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('barang.create');
     }
 
     /**
@@ -72,7 +72,8 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        //
+        $barang = Barang::where('id', $id)->first();
+        return view('barang.detail', compact('barang'));
     }
 
     /**
@@ -83,7 +84,8 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $barang = Barang::where('id', $id)->first();
+        return view('barang.edit', compact('barang'));
     }
 
     /**
@@ -95,7 +97,37 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'harga' => 'required',
+            'kategori' => 'required',
+            'tambahan' => 'required',
+            'harga_tambahan' => 'required',
+            'estimasi_pembuatan' => 'required',
+            'foto' => 'required',
+        ]);
+        
+        if($request->file('foto')){
+            $image_name = $request->file('foto')->store('image', 'public');
+        }
+
+        $barang = Barang::where('id', $id)->first();
+        $barang->nama = $request->get('nama');
+        $barang->harga = $request->get('harga');
+        $barang->kategori = $request->get('kategori');
+        $barang->tambahan = $request->get('tambahan');
+        $barang->harga_tambahan = $request->get('harga_tambahan');
+        $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
+        if($barang->foto && file_exists(storage_path('./app/public/'. $barang->foto))){
+            Storage::delete(['./public/', $barang->foto]);
+        }
+
+        $image_name = $request->file('foto')->store('image', 'public');
+        $barang->foto = $image_name;
+        $barang->save();
+        
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
@@ -106,6 +138,7 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Barang::where('id', $id)->delete();
+        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Dihapus');
     }
 }
