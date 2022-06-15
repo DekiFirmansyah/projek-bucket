@@ -14,10 +14,7 @@
         <li class="selected"><a href="#">home</a></li>
         <li><a href="about.html">about us</a></li>
         <li><a href="category.html">Bouquet</a></li>
-        <li><a href="specials.html">specials gifts</a></li>
-        <li><a href="myaccount.html">my accout</a></li>
-        <li><a href="register.html">register</a></li>
-        <li><a href="details.html">prices</a></li>
+        <li><a href="details.html">Transaksi</a></li>
         <li><a href="contact.html">contact</a></li>
       </ul>
     </div>
@@ -30,9 +27,9 @@
         <div class="prod_det_box">
           <div class="box_top"></div>
           <div class="box_center">
-            <div class="prod_title">Product name</div>
-            <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <a href="#" class="more">- more details -</a>
+            <div class="prod_title">Bucket Bunga</div>
+            <p class="details">Pada Bucket bunga ini bisa minta request mau bunga jenis apa dan berapa jumlahnya serta harga nantinya disesuaikan.</p>
+            <a href="#" class="more"></a>
             <div class="clear"></div>
           </div>
           <div class="box_bottom"></div>
@@ -44,9 +41,9 @@
         <div class="prod_det_box">
           <div class="box_top"></div>
           <div class="box_center">
-            <div class="prod_title">Product name</div>
-            <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <a href="#" class="more">- more details -</a>
+            <div class="prod_title">Bucket Boneka</div>
+            <p class="details">Pada buket boneka ini juga bisa request jenis boneka yang sudah tersedia dan buat setiap momen kerabat, pacar, teman anda semakin lebih berwarna dengan pemberian hadiah Anda.</p>
+            <a href="#" class="more"></a>
             <div class="clear"></div>
           </div>
           <div class="box_bottom"></div>
@@ -55,10 +52,10 @@
       </div>
       <div class="title"><span class="title_icon"><img src="images/bullet2.gif" alt="" /></span>New products</div>
       <div class="new_products">
-        <div class="new_prod_box"> <a href="#">product name</a>
+        <div class="new_prod_box"> <a href="#">Bucket Snack</a>
           <div class="new_prod_bg"> <span class="new_icon"><img src="images/new_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb1.gif" alt="" class="thumb" border="0" /></a> </div>
         </div>
-        <div class="new_prod_box"> <a href="#">product name</a>
+        <div class="new_prod_box"> <a href="#">Bucket Uang</a>
           <div class="new_prod_bg"> <span class="new_icon"><img src="images/new_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb2.gif" alt="" class="thumb" border="0" /></a> </div>
         </div>
         <div class="new_prod_box"> <a href="#">product name</a>
@@ -75,18 +72,18 @@
         <a href="cart.html" class="view_cart">view cart</a> </div>
       <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" /></span>About Our Shop</div>
       <div class="about">
-        <p> <img src="images/about.gif" alt="" class="right" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
+        <p> <img src="images/about.gif" alt="" class="right" /> D2 BOUQUET adalah salah satu online shop berbasis website dimana disini menyediakan berbagai jenis bouquet yang tertera pada website serta dapat memesan buket sesuai request pembeli. </p>
       </div>
       <div class="right_box">
-        <div class="title"><span class="title_icon"><img src="images/bullet4.gif" alt="" /></span>Promotions</div>
-        <div class="new_prod_box"> <a href="#">product name</a>
+        <div class="title"><span class="title_icon"><img src="images/bullet4.gif" alt="" /></span>Produk terbaik</div>
+        <div class="new_prod_box"> <a href="#"></a>
           <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb1.gif" alt="" class="thumb" border="0" /></a> </div>
         </div>
-        <div class="new_prod_box"> <a href="#">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb2.gif" alt="" class="thumb" border="0" /></a> </div>
+        <div class="new_prod_box"> <a href="#"></a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/prod2.gif" alt="" class="thumb" border="0" /></a> </div>
         </div>
-        <div class="new_prod_box"> <a href="#">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb3.gif" alt="" class="thumb" border="0" /></a> </div>
+        <div class="new_prod_box"> <a href="#"></a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/prod1.gif" alt="" class="thumb" border="0" /></a> </div>
         </div>
       </div>
       <div class="right_box">
