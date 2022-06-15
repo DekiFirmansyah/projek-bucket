@@ -82,7 +82,7 @@ class PembeliController extends Controller
      */
     public function edit($id)
     {
-        $pembeli = Pembeli::where('id', $id)->first();
+        $pembeli = Pembeli::find('id', $id);
         return view('pembeli.edit', compact('pembeli'));
     }
 
@@ -103,12 +103,8 @@ class PembeliController extends Controller
             'no_telp' => 'required',
             'foto' => 'required',
         ]);
-        
-        if($request->file('foto')){
-            $image_name = $request->file('foto')->store('image', 'public');
-        }
 
-        $pembeli = Pembeli::where('id', $id)->first();
+        $pembeli = Pembeli::find('id', $id);
         $pembeli->nama = $request->get('Nama');
         $pembeli->jenis_kelamin = $request->get('jenis_kelamin');
         $pembeli->email = $request->get('email');

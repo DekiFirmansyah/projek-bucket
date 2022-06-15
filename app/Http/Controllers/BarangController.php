@@ -84,7 +84,7 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        $barang = Barang::where('id', $id)->first();
+        $barang = Barang::find('id', $id);
         return view('barang.edit', compact('barang'));
     }
 
@@ -106,12 +106,8 @@ class BarangController extends Controller
             'estimasi_pembuatan' => 'required',
             'foto' => 'required',
         ]);
-        
-        if($request->file('foto')){
-            $image_name = $request->file('foto')->store('image', 'public');
-        }
 
-        $barang = Barang::where('id', $id)->first();
+        $barang = Barang::find('id', $id);
         $barang->nama = $request->get('nama');
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
