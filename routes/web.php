@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -22,7 +22,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('admin', function() { return view('adminLayout'); })->middleware('checkRole:admin');
-Route::get('pembeli', function() { return view('userLayout'); })->middleware('checkRole:pembeli,admin');
+Route::get('admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin')->middleware('is_admin');

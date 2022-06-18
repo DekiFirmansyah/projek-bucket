@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class CheckRole
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -14,17 +14,12 @@ class CheckRole
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        $roles = array_slice(func_get_args(), 2);
-
-        foreach ($roles as $role){
-            $user = \Auth::user()->role;
-            if($user == $role){
-                return $next($request);
-            }
+        if(auth()->user()->is_admin == 1){
+            return $next($request);
         }
 
-        return redirect('/');
+        return redirect('home')->with('error',"You don't hve admin access");
     }
 }
