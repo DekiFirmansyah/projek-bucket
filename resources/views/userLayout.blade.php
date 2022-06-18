@@ -58,7 +58,7 @@
         <div class="new_prod_box"> <a href="#">Bucket Uang</a>
           <div class="new_prod_bg"> <span class="new_icon"><img src="images/new_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb2.gif" alt="" class="thumb" border="0" /></a> </div>
         </div>
-        <div class="new_prod_box"> <a href="#">product name</a>
+        <div class="new_prod_box"> <a href="#">Bucket Jilbab</a>
           <div class="new_prod_bg"> <span class="new_icon"><img src="images/new_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb3.gif" alt="" class="thumb" border="0" /></a> </div>
         </div>
       </div>
@@ -87,25 +87,13 @@
         </div>
       </div>
       <div class="right_box">
-        <div class="title"><span class="title_icon"><img src="images/bullet5.gif" alt="" /></span>Categories</div>
+        <div class="title"><span class="title_icon"><img src="images/bullet5.gif" alt="" /></span>Nama Produk</div>
         <ul class="list">
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-        </ul>
-        <div class="title"><span class="title_icon"><img src="images/bullet6.gif" alt="" /></span>Partners</div>
-        <ul class="list">
-        <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
+          <li><a href="#">Bucket Bunga</a></li>
+          <li><a href="#">Bucket Boneka</a></li>
+          <li><a href="#">Bucket snack</a></li>
+          <li><a href="#">Bucket uang</a></li>
+          <li><a href="#">Bucket jilbab atau barang lainnya</a></li>
         </ul>
       </div>
     </div>
@@ -113,11 +101,23 @@
     <div class="clear"></div>
   </div>
   <!--end of center content-->
+  
   <div class="footer">
     <div class="left_footer"><img src="images/footer_logo.gif" alt="" /><br />
       <a href="http://csscreme.com"><img src="images/csscreme.gif" alt="" border="0" /></a></div>
-    <div class="right_footer"> <a href="#">home</a> <a href="#">about us</a> <a href="#">services</a> <a href="#">privacy policy</a> <a href="#">contact us</a> </div>
+   
+      <!--============ COPYRIGHTS ============-->
+
+
+<div class="copyrightswrapper">
+  <div class="left_center">
+    <div id="copyrights" class="container">
+    
+ 	   <p>Copyright 2022 <a href="https://www.facebook.com/Mido.HHH"> Dilta Febiana & Deki Firmansyah </a> All Rights Reserved</p>
+    
+    </div> <!-- end of copyrights-->
   </div>
+</div>
 </div>
 </body>
 </html>
