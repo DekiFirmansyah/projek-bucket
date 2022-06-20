@@ -14,7 +14,7 @@ class TambahKolomTabelUser extends Migration
     public function up()
     {
         Schema::table('users', function(Blueprint $table){
-            $table->enum('role', ['admin', 'pembeli'])->default('pembeli');
+            $table->boolean('is_admin')->nullable()->default('0');
         });
     }
 
@@ -26,7 +26,7 @@ class TambahKolomTabelUser extends Migration
     public function down()
     {
         Schema::table('users', function(Blueprint $table){
-            $table->dropColumn('role');
+            $table->dropColumn('is_admin');
         });
     }
 }

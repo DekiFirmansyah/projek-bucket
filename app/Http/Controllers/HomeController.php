@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('masterLayout');
+        return view('userLayout');
     }
+
+    public function adminHome()
+    {
+        return view('adminLayout');
+    }
+
 }

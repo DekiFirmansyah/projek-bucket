@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -24,9 +24,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+<<<<<<< HEAD
 Route::get('admin', function() { return view('adminLayout'); })->middleware('checkRole:admin');
 Route::get('pembeli', function() { return view('userLayout'); })->middleware('checkRole:pembeli,admin');
 
 Route::get('/Detail_Transaksi/cetak_pdf',[Detail_TransaksiController::class,'cetak_pdf'])->name('cetak_pdf');
+=======
+Route::get('admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin')->middleware('is_admin');
+>>>>>>> 2e91102d294c48765330f96ea634955e20f94912
