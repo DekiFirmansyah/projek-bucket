@@ -20,8 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::view('flower', 'userLayout');
-Route::view('admin', 'adminLayout');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('admin', function() { return view('adminLayout'); })->middleware('checkRole:admin');
+Route::get('pembeli', function() { return view('userLayout'); })->middleware('checkRole:pembeli,admin');
