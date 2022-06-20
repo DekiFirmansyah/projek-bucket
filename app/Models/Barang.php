@@ -15,7 +15,6 @@ class Barang extends Model
         'harga',
         'kategori',
         'tambahan',
-        'harga_tambahan',
         'estimasi_pembuatan',
         'foto'
     ];

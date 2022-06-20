@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
 class PembeliController extends Controller
@@ -119,7 +119,7 @@ class PembeliController extends Controller
         $pembeli->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil Ditambahkan');
+        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil DiUpdate');
     }
 
     /**

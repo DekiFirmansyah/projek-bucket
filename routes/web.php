@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PembeliController;
+use Illuminate\Http\Request; 
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('admin', function() { return view('adminLayout'); })->middleware('checkRole:admin');
 Route::get('pembeli', function() { return view('userLayout'); })->middleware('checkRole:pembeli,admin');
+
+Route::get('/Detail_Transaksi/cetak_pdf',[Detail_TransaksiController::class,'cetak_pdf'])->name('cetak_pdf');

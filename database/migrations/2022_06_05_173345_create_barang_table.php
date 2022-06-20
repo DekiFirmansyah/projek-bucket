@@ -20,7 +20,6 @@ class CreateBarangTable extends Migration
             $table->integer('harga');
             $table->string('kategori');
             $table->string('tambahan');
-            $table->integer('harga_tambahan');
             $table->string('estimasi_pembuatan');
             $table->timestamps();
         });

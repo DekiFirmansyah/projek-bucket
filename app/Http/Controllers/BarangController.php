@@ -40,8 +40,6 @@ class BarangController extends Controller
             'nama' => 'required',
             'harga' => 'required',
             'kategori' => 'required',
-            'tambahan' => 'required',
-            'harga_tambahan' => 'required',
             'estimasi_pembuatan' => 'required',
             'foto' => 'required',
         ]);
@@ -54,8 +52,6 @@ class BarangController extends Controller
         $barang->nama = $request->get('nama');
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
-        $barang->tambahan = $request->get('tambahan');
-        $barang->harga_tambahan = $request->get('harga_tambahan');
         $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
         $barang->foto = $image_name;
         $barang->save();
@@ -101,8 +97,6 @@ class BarangController extends Controller
             'nama' => 'required',
             'harga' => 'required',
             'kategori' => 'required',
-            'tambahan' => 'required',
-            'harga_tambahan' => 'required',
             'estimasi_pembuatan' => 'required',
             'foto' => 'required',
         ]);
@@ -111,8 +105,6 @@ class BarangController extends Controller
         $barang->nama = $request->get('nama');
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
-        $barang->tambahan = $request->get('tambahan');
-        $barang->harga_tambahan = $request->get('harga_tambahan');
         $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
         if($barang->foto && file_exists(storage_path('./app/public/'. $barang->foto))){
             Storage::delete(['./public/', $barang->foto]);
