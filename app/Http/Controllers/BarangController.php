@@ -26,7 +26,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return view('barang.create');
+        return view('admin.barang.create');
     }
 
     /**
@@ -42,8 +42,8 @@ class BarangController extends Controller
             'harga' => 'required',
             'kategori' => 'required',
             'estimasi_pembuatan' => 'required',
-            'catatan' => 'required',
             'foto' => 'required',
+            'catatan' => 'required',
         ]);
         
         if($request->file('foto')){
@@ -55,12 +55,12 @@ class BarangController extends Controller
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
         $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
-        $barang->catatan = $request->get('catatan');
         $barang->foto = $image_name;
+        $barang->catatan = $request->get('catatan');
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
+        return redirect()->route('admin.barang.index')->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
@@ -72,7 +72,7 @@ class BarangController extends Controller
     public function show($id)
     {
         $barang = Barang::where('id', $id)->first();
-        return view('barang.detail', compact('barang'));
+        return view('admin.barang.detail', compact('barang'));
     }
 
     /**
@@ -84,7 +84,7 @@ class BarangController extends Controller
     public function edit($id)
     {
         $barang = Barang::find('id', $id);
-        return view('barang.edit', compact('barang'));
+        return view('admin.barang.edit', compact('barang'));
     }
 
     /**
@@ -101,8 +101,8 @@ class BarangController extends Controller
             'harga' => 'required',
             'kategori' => 'required',
             'estimasi_pembuatan' => 'required',
-            'catatan' => 'required',
             'foto' => 'required',
+            'catatan' => 'required',
         ]);
 
         $barang = Barang::find('id', $id);
@@ -110,17 +110,17 @@ class BarangController extends Controller
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
         $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
-        $barang->catatan = $request->get('catatan');
         if($barang->foto && file_exists(storage_path('./app/public/'. $barang->foto))){
             Storage::delete(['./public/', $barang->foto]);
         }
 
         $image_name = $request->file('foto')->store('image', 'public');
         $barang->foto = $image_name;
+        $barang->catatan = $request->get('catatan');
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
+        return redirect()->route('admin.barang.index')->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
@@ -132,6 +132,6 @@ class BarangController extends Controller
     public function destroy($id)
     {
         Barang::where('id', $id)->delete();
-        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Dihapus');
+        return redirect()->route('admin.barang.index')->with('success', 'Barang Berhasil Dihapus');
     }
 }
