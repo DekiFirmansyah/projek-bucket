@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -15,7 +16,7 @@ class BarangController extends Controller
     {
         $barang = Barang::all(); // Mengambil semua isi tabel
         $paginate = Barang::orderBy('id', 'asc')->paginate(3);
-        return view('barang.index', ['barang' => $barang,'paginate'=>$paginate]);
+        return view('admin.barang.index', ['barang' => $barang,'paginate'=>$paginate]);
     }
 
     /**

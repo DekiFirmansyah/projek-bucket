@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembeli;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PembeliController extends Controller
@@ -13,9 +15,9 @@ class PembeliController extends Controller
      */
     public function index()
     {
-        $pembeli = Pembeli::all(); // Mengambil semua isi tabel
+        $pembeli = Pembeli::with('user')->get(); // Mengambil semua isi tabel
         $paginate = Pembeli::orderBy('id', 'asc')->paginate(3);
-        return view('pembeli.index', ['pembeli' => $pembeli,'paginate'=>$paginate]);
+        return view('admin.pembeli.index', ['pembeli' => $pembeli,'paginate'=>$paginate]);
     }
 
     /**

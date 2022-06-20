@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transaksi;
 
 class TransaksiController extends Controller
 {
@@ -15,7 +16,7 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::all(); // Mengambil semua isi tabel
         $paginate = Transaksi::orderBy('id', 'asc')->paginate(3);
-        return view('transaksi.index', ['transaksi' => $transaksi,'paginate'=>$paginate]);
+        return view('admin.transaksi.index', ['transaksi' => $transaksi,'paginate'=>$paginate]);
     }
 
     /**
