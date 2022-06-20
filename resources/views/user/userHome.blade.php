@@ -117,7 +117,6 @@
     <!--end of right content-->
     <div class="clear"></div>
   </div>
-<<<<<<< HEAD:resources/views/user/userHome.blade.php
 </div>
 @endsection
   <!--end of center content-->
@@ -125,26 +124,3 @@
 
 
 
-=======
-  <!--end of center content-->
-  
-  <div class="footer">
-    <div class="left_footer"><img src="images/footer_logo.gif" alt="" /><br />
-      <a href="http://csscreme.com"><img src="images/csscreme.gif" alt="" border="0" /></a></div>
-   
-      <!--============ COPYRIGHTS ============-->
-
-
-<div class="copyrightswrapper">
-  <div class="left_center">
-    <div id="copyrights" class="container">
-    
- 	   <p>Copyright 2022 <a href="https://www.facebook.com/Mido.HHH"> Dilta Febiana & Deki Firmansyah </a> All Rights Reserved</p>
-    
-    </div> <!-- end of copyrights-->
-  </div>
-</div>
-</div>
-</body>
-</html>
->>>>>>> 0148ec447655715e8f351d47fa21e97c2a674543:resources/views/userLayout.blade.php

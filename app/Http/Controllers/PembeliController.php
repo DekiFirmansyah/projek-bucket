@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-<<<<<<< HEAD
 
 use App\Models\Pembeli;
 use App\Models\User;
-=======
-use App\Models\Mahasiswa;
->>>>>>> 0148ec447655715e8f351d47fa21e97c2a674543
 use Illuminate\Http\Request;
 
 class PembeliController extends Controller

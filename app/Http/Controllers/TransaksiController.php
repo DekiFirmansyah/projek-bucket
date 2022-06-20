@@ -4,14 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaksi; 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-use App\Models\Transaksi;
-=======
 use Illuminate\Support\Facades\DB;
 use App\Models\Pembeli;
 use App\Models\Barang;
 
->>>>>>> 0148ec447655715e8f351d47fa21e97c2a674543
 
 class TransaksiController extends Controller
 {

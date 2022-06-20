@@ -5,13 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail; 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use App\Models\Pembeli;
-=======
-use Illuminate\Foundation\Auth\Mahasiswa as Authenticatable; 
-use Illuminate\Notifications\Notifiable; 
-
->>>>>>> 0148ec447655715e8f351d47fa21e97c2a674543
 
 class Pembeli extends Model
 {

@@ -42,6 +42,7 @@ class BarangController extends Controller
             'harga' => 'required',
             'kategori' => 'required',
             'estimasi_pembuatan' => 'required',
+            'catatan' => 'required',
             'foto' => 'required',
         ]);
         
@@ -54,6 +55,7 @@ class BarangController extends Controller
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
         $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
+        $barang->catatan = $request->get('catatan');
         $barang->foto = $image_name;
         $barang->save();
         
@@ -99,6 +101,7 @@ class BarangController extends Controller
             'harga' => 'required',
             'kategori' => 'required',
             'estimasi_pembuatan' => 'required',
+            'catatan' => 'required',
             'foto' => 'required',
         ]);
 
@@ -107,6 +110,7 @@ class BarangController extends Controller
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
         $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
+        $barang->catatan = $request->get('catatan');
         if($barang->foto && file_exists(storage_path('./app/public/'. $barang->foto))){
             Storage::delete(['./public/', $barang->foto]);
         }

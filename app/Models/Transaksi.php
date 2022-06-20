@@ -16,6 +16,7 @@ class Transaksi extends Model
         'barang_id',
         'jumlah',
         'total_harga',
+        'catatan'
     ];
 
     public function barang(){

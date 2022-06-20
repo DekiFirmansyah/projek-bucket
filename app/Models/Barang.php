@@ -14,9 +14,9 @@ class Barang extends Model
         'nama',
         'harga',
         'kategori',
-        'tambahan',
         'estimasi_pembuatan',
-        'foto'
+        'foto',
+        'catatan'
     ];
 
     public function transaksi(){
