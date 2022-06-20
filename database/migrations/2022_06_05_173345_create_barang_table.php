@@ -19,6 +19,10 @@ class CreateBarangTable extends Migration
             $table->string('foto');
             $table->integer('harga');
             $table->string('kategori');
+<<<<<<< HEAD
+=======
+            $table->string('tambahan');
+>>>>>>> 0148ec447655715e8f351d47fa21e97c2a674543
             $table->string('estimasi_pembuatan');
             $table->string('catatan');
             $table->timestamps();

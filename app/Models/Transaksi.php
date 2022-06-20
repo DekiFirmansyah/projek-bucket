@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Transaksi;   
 
 class Transaksi extends Model
 {
@@ -14,7 +15,6 @@ class Transaksi extends Model
         'pembeli_id',
         'barang_id',
         'jumlah',
-        'jumlah_tambah',
         'total_harga',
     ];
 
