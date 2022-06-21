@@ -42,3 +42,7 @@ route::resource('transaksi', TransaksiController::class);
 
 Route::get('/laporan_pdf',[TransaksiController::class, 'laporan_pdf'])->name('laporan_pdf');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
