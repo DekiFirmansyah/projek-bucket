@@ -19,7 +19,7 @@ class CreateTransaksiTable extends Migration
             $table->unsignedBigInteger('barang_id')->nullable(); 
             $table->integer('jumlah');
             $table->integer('total_harga');
-            $table->string('catatan');
+            $table->text('catatan');
             $table->timestamps();
             $table->foreign('pembeli_id')->references('id')->on('pembeli');
             $table->foreign('barang_id')->references('id')->on('barang');

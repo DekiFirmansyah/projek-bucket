@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.bucket')
 
 @section('header')
@@ -33,9 +34,11 @@
   </div>
 </div>
 @endsection
+=======
+@extends('layouts.user')
+>>>>>>> c189d6b26c1c421358d8c6bd0dd970f7465e81ea
 
 @section('content')
-<div id="wrap">
   <div class="center_content">
     <div class="left_content">
       <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Featured products</div>
@@ -117,9 +120,7 @@
     <!--end of right content-->
     <div class="clear"></div>
   </div>
-</div>
 @endsection
-  <!--end of center content-->
   
 
 

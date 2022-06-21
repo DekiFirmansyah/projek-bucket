@@ -22,16 +22,44 @@
 </head>
 <body>
 
-<!--============ Navigation ============-->
+<div id="wrap">
+  <div class="header">
+    <div class="logo"><a href="#"><img src="images/logo.png" alt="" border="0" /></a></div>
+    <div id="menu">
+      <ul>
+        <li><a href="admin-home">home</a></li>
+        <li><a href="{{ route('barang.index') }}">Data Barang</a></li>
+        <li><a href="{{ route('transaksi.index') }}">Data Transaksi</a></li>
+        <li><a href="{{ route('user.index') }}">Data User</a></li>
+        <li><a href="contact.html">contact</a></li>
+        <li class="nav-item dropdown">
+          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ Auth::user()->name }}
+          </a>
 
-@yield('header')
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+            </form>
+          </div>
+        </li>                
+      </ul>
+    </div>
+  </div>
+
 
 <!--============ Content ============-->
 
 @yield('content')
 
-<div id="wrap">
-<div class="footer">
+
+  <div class="footer">
     <div class="left_footer"><img src="{{ asset('images/footer_logo.gif') }}" alt="" /><br />
       <a href="http://csscreme.com"><img src="{{ asset('images/csscreme.gif') }}" alt="" border="0" /></a></div>
     <div class="right_footer"> <a href="#">home</a> <a href="#">about us</a> <a href="#">services</a> <a href="#">privacy policy</a> <a href="#">contact us</a> </div>

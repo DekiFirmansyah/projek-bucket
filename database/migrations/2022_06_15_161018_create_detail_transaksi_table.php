@@ -18,7 +18,8 @@ class CreateDetailTransaksiTable extends Migration
             $table->unsignedBigInteger('toko_id')->nullable();
             $table->unsignedBigInteger('transaksi_id')->nullable();
             $table->unsignedBigInteger('pembayaran_id')->nullable(); 
-            $table->string('deskripsi');
+            $table->text('deskripsi');
+            $table->string('status')->default('pending');
             $table->timestamps();
             $table->foreign('transaksi_id')->references('id')->on('transaksi');
             $table->foreign('pembayaran_id')->references('id')->on('pembayaran');
