@@ -6,7 +6,7 @@
     <div class="logo"><a href="#"><img src="images/logo.png" alt="" border="0" /></a></div>
     <div id="menu">
       <ul>
-        <li><a href="userHome">home</a></li>
+        <li><a href="home">home</a></li>
         <li><a href="about">about us</a></li>
         <li><a href="category.html">Bouquet</a></li>
         <li><a href="details.html">Transaksi</a></li>

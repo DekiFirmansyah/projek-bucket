@@ -6,8 +6,8 @@
     <div class="logo"><a href="#"><img src="images/logo.png" alt="" border="0" /></a></div>
     <div id="menu">
     <ul>
-        <li class="selected"><a href="#">home</a></li>
-        <li><a href="pembeli/about.html">about us</a></li>
+        <li><a href="home">home</a></li>
+        <li><a href="about">about us</a></li>
         <li><a href="category.html">Bouquet</a></li>
         <li><a href="details.html">Transaksi</a></li>
         <li><a href="contact.html">contact</a></li>
