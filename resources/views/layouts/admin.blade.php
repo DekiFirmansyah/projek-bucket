@@ -58,7 +58,7 @@
 
 @yield('content')
 
-
+<div id="wrap">
   <div class="footer">
     <div class="left_footer"><img src="{{ asset('images/footer_logo.gif') }}" alt="" /><br />
       <a href="http://csscreme.com"><img src="{{ asset('images/csscreme.gif') }}" alt="" border="0" /></a></div>

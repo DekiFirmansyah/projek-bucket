@@ -12,6 +12,7 @@ class Pembeli extends Model
     protected $table='pembeli';
 
     protected $fillable = [
+        'user_id',
         'nama',
         'jenis_kelamin',
         'email',

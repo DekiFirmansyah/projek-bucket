@@ -73,7 +73,7 @@ class PembeliController extends Controller
     public function show($id)
     {
         $pembeli = Pembeli::where('id', $id)->first();
-        return view('pembeli.detail', compact('pembeli'));
+        return view('admin.pembeli.detail', compact('pembeli'));
     }
 
     /**

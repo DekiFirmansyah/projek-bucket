@@ -43,11 +43,10 @@
             <td>{{ $pbl ->jenis_kelamin }}</td>
             <td>{{ $pbl ->alamat }}</td>
             <td>{{ $pbl ->no_telp }}</td>
-            <td><img style="width: 50px; overflow: hidden" class="rounded-circle" src="{{ asset('./storage/'. $mhs->foto) }}" alt=""></td>
+            <td><img style="width: 50px; overflow: hidden" class="rounded-circle" src="{{ asset('./storage/'. $pbl->foto) }}" alt=""></td>
             <td>
                 <form action="{{ route('user.destroy',['user'=>$pbl->id]) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('user.show',$pbl->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('user.edit',$pbl->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>

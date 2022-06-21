@@ -12,10 +12,8 @@ class Transaksi extends Model
     protected $table='transaksi';
 
     protected $fillable = [
-        'pembeli_id',
-        'barang_id',
-        'jumlah',
-        'total_harga',
+        'pembayaran',
+        'status',
         'catatan'
     ];
 
@@ -27,11 +25,7 @@ class Transaksi extends Model
         return $this->belongsTo(Pembeli::class);
     }
 
-    public function detail_transaksi(){
-        return $this->belongsToMany(Detail_Transaksi::class);
-    }
-
-    public function pembayaran(){
-        return $this->belongsToMany(Pembayaran::class);
-    }
+    public function toko(){
+        return $this->belongsTo(Toko::class);
+    }    
 }
