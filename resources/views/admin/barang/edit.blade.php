@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label for="catatan">Catatan</label>
                             <input type="text" name="catatan" class="form-control" id="catatan" value="{{ $barang->catatan }}" ariadescribedby="catatan" >
-                        </div>
+                        </div> -->
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

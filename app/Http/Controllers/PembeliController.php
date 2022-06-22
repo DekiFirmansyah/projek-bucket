@@ -27,9 +27,14 @@ class PembeliController extends Controller
      */
     public function create()
     {
-        return view('pembeli.create');
+        $user = User::all(); //mendapatkan data dari tabel kelas
+        return view('user.pembeli.create',['user' => $user]);
     }
 
+    public function profil()
+    {
+        return view('user.pembeli.profil');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -39,6 +44,7 @@ class PembeliController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'user' => 'required',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
             'email' => 'required',
@@ -52,7 +58,7 @@ class PembeliController extends Controller
         }
 
         $pembeli = new Pembeli;
-        $pembeli->nama = $request->get('Nama');
+        $pembeli->nama = $request->get('nama');
         $pembeli->jenis_kelamin = $request->get('jenis_kelamin');
         $pembeli->email = $request->get('email');
         $pembeli->alamat = $request->get('alamat');
@@ -60,8 +66,15 @@ class PembeliController extends Controller
         $pembeli->foto = $image_name;
         $pembeli->save();
 
+        $user = new User;
+        $user->id = $request->get('user');
+
+        //fungsi eloquent untuk menambah data dengan relasi belongsTo
+        $pembeli->user()->associate($user);
+        $pembeli->save();
+
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil Ditambahkan');
+        return redirect()->route('profil')->with('success', 'Pembeli Berhasil Ditambahkan');
     }
 
     /**

@@ -26,9 +26,10 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <tr>
-            <th>Nama</th>
+    <div class="feat_prod_box_details">
+    <table class="cart_table">
+        <tr class="cart_title">
+            <th width="220px" >Nama</th>
             <th>Harga</th>
             <th>Kategori</th>
             <th>Estimasi Pembuatan</th>
@@ -57,11 +58,11 @@
         </tr>
         @endforeach
     </table>
-
+    
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
     Data Halaman: {{ $paginate->perPage() }}<br>
     <br>
     {{ $paginate->links() }}
-  </div>
+    </div>
 @endsection
