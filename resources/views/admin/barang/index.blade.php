@@ -34,7 +34,7 @@
             <th>Estimasi Pembuatan</th>
             <th>Foto</th>
             <th>Catatan</th>
-            <th width="320px">Action</th>
+            <th width="220px">Action</th>
         </tr>
 
         @foreach ($paginate as $brg)

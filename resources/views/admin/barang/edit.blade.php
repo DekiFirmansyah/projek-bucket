@@ -17,8 +17,9 @@
                         </div>
                     @endif
                     <form method="post" action="{{ route('barang.update', $barang->id) }}" id="myForm" enctype="multipart/form-data">
+                        @method('PUT')    
                         @csrf
-                        @method('PUT')
+                        
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" name="nama" class="form-control" id="nama" value="{{ $barang->nama }}" aria-describedby="nama" >

@@ -164,11 +164,20 @@ class TransaksiController extends Controller
     }
 
     public function laporan_pdf(){
-        $transaksi = Transaksi::with('pembeli')->get();
-        $transaksi = Transaksi::with('barang')->get();
-        $paginate = Transaksi::orderBy('id', 'asc'); 
-        $pdf = PDF::loadview('admin.transaksi.laporan_pdf',['transaksi'=>$transaksi, 'paginate'=>$paginate]);
+        $paginate = Transaksi::all(); 
+        $pdf = PDF::loadview('admin.transaksi.laporan_pdf',['paginate'=>$paginate]);
         return $pdf->stream();
         
+    }
+
+    public function cetak_pdf($nim){
+        $mahasiswa = Mahasiswa::where('nim', $nim)->first();
+        $nilai = Mahasiswa_Matakuliah::where('mahasiswa_id', $mahasiswa->id_mahasiswa)
+                                       ->with('matakuliah')
+                                       ->with('mahasiswa')
+                                       ->get();
+        $nilai->mahasiswa = Mahasiswa::with('kelas')->where('nim', $nim)->first();
+        $pdf = PDF::loadview('mahasiswa.nilai_pdf', compact('nilai'));
+        return $pdf->stream();
     }
 }

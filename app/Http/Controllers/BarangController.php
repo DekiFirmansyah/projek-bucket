@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BarangController extends Controller
 {
@@ -83,7 +84,7 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        $barang = Barang::where('id', $id)->first();
+        $barang = Barang::find($id);
         return view('admin.barang.edit', compact('barang'));
     }
 
@@ -105,13 +106,13 @@ class BarangController extends Controller
             'catatan' => 'required',
         ]);
 
-        $barang = Barang::where('id', $id);
+        $barang = Barang::find($id);
         $barang->nama = $request->get('nama');
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');
         $barang->estimasi_pembuatan = $request->get('estimasi_pembuatan');
         if($barang->foto && file_exists(storage_path('./app/public/'. $barang->foto))){
-            Storage::delete(['./public/', $barang->foto]);
+            Storage::delete(['public/', $barang->foto]);
         }
 
         $image_name = $request->file('foto')->store('image', 'public');
@@ -120,7 +121,7 @@ class BarangController extends Controller
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.barang.index')->with('success', 'Barang Berhasil Ditambahkan');
+        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
