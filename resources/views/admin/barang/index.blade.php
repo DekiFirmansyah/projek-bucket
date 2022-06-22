@@ -5,7 +5,7 @@
         <div class="col-lg-12 margin-tb">
           <br>
             <div class="pull-left mt-2">
-                <h2>DATA BARANG</h2>
+            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Daftar Barang</div>
             </div>
             <br>
             <div class="float-right my-2">
