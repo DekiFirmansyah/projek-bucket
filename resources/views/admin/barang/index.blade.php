@@ -9,7 +9,7 @@
             </div>
             <br>
             <div class="float-right my-2">
-                <a class="btn btn-success" href="{{ route('barang.create') }}"> Input Barang</a>
+                <a href="{{ route('barang.create') }}" class="btn btn-success"> Input Mahasiswa</a> 
             </div>
         </div>
         </div>
@@ -26,16 +26,20 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <tr>
-            <th>Nama</th>
-            <th>Harga</th>
-            <th>Kategori</th>
-            <th>Estimasi Pembuatan</th>
-            <th>Foto</th>
-            <th>Catatan</th>
-            <th width="320px">Action</th>
-        </tr>
+    <div class="center_content">
+    <div class="left_content">
+    <div class="feat_prod_box_details">
+        <table class="cart_table">
+          <tr class="cart_title">
+            <th width="350px" >Nama</th>
+            <th width="300">Harga</th>
+            <th width="350px">Kategori</th>
+            <th width="350px">Estimasi Pembuatan</th>
+            <th width="450px">Foto</th>
+            <th width="400px">Catatan</th>
+            <th width="500px">Action</th>
+          </tr>
+          
 
         @foreach ($paginate as $brg)
         <tr>
@@ -58,10 +62,13 @@
         @endforeach
     </table>
 
+
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
-    Data Halaman: {{ $paginate->perPage() }}<br>
+    <!--Data Halaman: {{ $paginate->perPage() }}<br>-->
     <br>
     {{ $paginate->links() }}
   </div>
+</div>
+</div>
 @endsection

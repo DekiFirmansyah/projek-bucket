@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-@extends('layouts.bucket')
+
+@extends('layouts.user')
 
 @section('header')
 <div id="wrap">
@@ -34,9 +34,8 @@
   </div>
 </div>
 @endsection
-=======
+
 @extends('layouts.user')
->>>>>>> c189d6b26c1c421358d8c6bd0dd970f7465e81ea
 
 @section('content')
   <div class="center_content">
