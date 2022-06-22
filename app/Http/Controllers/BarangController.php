@@ -83,7 +83,7 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        $barang = Barang::find('id', $id);
+        $barang = Barang::where('id', $id)->first();
         return view('admin.barang.edit', compact('barang'));
     }
 
@@ -105,7 +105,7 @@ class BarangController extends Controller
             'catatan' => 'required',
         ]);
 
-        $barang = Barang::find('id', $id);
+        $barang = Barang::where('id', $id);
         $barang->nama = $request->get('nama');
         $barang->harga = $request->get('harga');
         $barang->kategori = $request->get('kategori');

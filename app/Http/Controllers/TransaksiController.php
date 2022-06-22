@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pembeli;
 use App\Models\Barang;
+use App\Models\Toko;
+use Illuminate\Support\Facades\Storage;
+use PDF;
 
 
 class TransaksiController extends Controller
@@ -20,6 +23,7 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::with('pembeli')->get();
         $transaksi = Transaksi::with('barang')->get();
+        $transaksi = Transaksi::with('toko')->get();
         $paginate = Transaksi::orderBy('id', 'asc')->paginate(3);
         return view('admin.transaksi.index', ['transaksi' => $transaksi,'paginate'=>$paginate]);
     }
@@ -47,11 +51,9 @@ class TransaksiController extends Controller
     {
         //nambah transaksi baru
         $request->validate([
-            'id' => 'required',
             'pembeli_id' => 'required',
             'barang_id' => 'required',
-            'jumlah' => 'required',
-            'total_harga' => 'required',
+            'toko_id' => 'required',
         ]);
         
 
@@ -87,7 +89,7 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::with('pembeli')->where('id', $id)->first();
         $transaksi = Transaksi::with('barang')->where('id', $id)->first();
-        return view('mahasiswa.detail', ['Mahasiswa' => $mahasiswa]); 
+        return view('transaksi.detail', ['transaksi' => $transaksi]); 
     }
 
     /**
@@ -98,12 +100,8 @@ class TransaksiController extends Controller
      */
     public function edit($id)
     {
-        $transaksi = Transaksi::with('pembeli')->where('id', $id)->first(); 
-        $pembeli = Pembeli::all(); //mendapatkan data dari tabel pembeli
-         
-        $transaksi = Transaksi::with('barang')->where('id', $id)->first(); 
-        $barang = Barang::all(); //mendapatkan data dari tabel barang
-        return view('transaksi.edit', compact('Transaksi')); 
+        $transaksi = Transaksi::where('id', $id)->first();
+        return view('admin.transaksi.edit', compact('transaksi')); 
     }
 
     /**
@@ -117,37 +115,16 @@ class TransaksiController extends Controller
     {
         //melakukan validasi data 
         $request->validate([ 
-            'id' => 'required',
-            'pembeli_id' => 'required',
-            'barang_id' => 'required',
-            'jumlah' => 'required',
-            'total_harga' => 'required',
+            'pembayaran' => 'required',
+            'status' => 'required',
         ]);
 
-        $transaksi = Transaksi::with('pembeli')->where('id', $id)->first(); 
-        $transaksi = Transaksi::with('barang')->where('id', $id)->first(); 
-        $transaksi->id = $request->get('id');
-        $transaksi->jumlah = $request->get('jumlah');;
-        $transaksi->total_harga = $request->get('total_harga');
+        $transaksi = Transaksi::where('id', $id)->first();  
+        $transaksi->pembayaran = $request->get('pembayaran');
+        $transaksi->status = $request->get('status');
         $transaksi->save();
 
-        $pembeli = new Pembeli;
-        $pembeli->id = $request->get('Pembeli');
-
-        $transaksi->pembeli()->associate($pembeli);
-        $transaksi->save();  
-        
-        $barang = new Barang;
-        $barang->id = $request->get('Barang');
-
-        $transaksi->barang()->associate($barang);
-        $transaksi->save();
-
-        return redirect()->route('transaksi.index')
-            ->with('success', 'Transaksi Berhasil Diupdate');
-        
-        
-        
+        return redirect()->route('transaksi.index')->with('success', 'Transaksi Berhasil Diupdate');
 
     }
 
@@ -183,6 +160,15 @@ class TransaksiController extends Controller
         //transaksi --> jumlah barang, jumlah tambahan
         //total = (harga barang * jumlah barang) + (harga tambahan * jumlah tambah)
         //return total;
+        
+    }
+
+    public function laporan_pdf(){
+        $transaksi = Transaksi::with('pembeli')->get();
+        $transaksi = Transaksi::with('barang')->get();
+        $paginate = Transaksi::orderBy('id', 'asc'); 
+        $pdf = PDF::loadview('admin.transaksi.laporan_pdf',['transaksi'=>$transaksi, 'paginate'=>$paginate]);
+        return $pdf->stream();
         
     }
 }

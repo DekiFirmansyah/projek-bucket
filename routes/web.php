@@ -40,7 +40,7 @@ route::resource('barang', BarangController::class);
 route::resource('user', PembeliController::class);
 route::resource('transaksi', TransaksiController::class);
 
-Route::get('/Detail_Transaksi/cetak_pdf',[Detail_TransaksiController::class,'cetak_pdf'])->name('cetak_pdf');
+Route::get('/laporan_pdf',[TransaksiController::class, 'laporan_pdf'])->name('laporan_pdf');
 
 
 Auth::routes();

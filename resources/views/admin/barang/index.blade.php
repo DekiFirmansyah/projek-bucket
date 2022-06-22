@@ -9,7 +9,7 @@
             </div>
             <br>
             <div class="float-right my-2">
-                <a class="btn btn-success" href="{{ route('barang.create') }}"> Input Mahasiswa</a>
+                <a class="btn btn-success" href="{{ route('barang.create') }}"> Input Barang</a>
             </div>
         </div>
         </div>
@@ -60,7 +60,7 @@
 
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
-    <!--Data Halaman: {{ $paginate->perPage() }}<br>-->
+    Data Halaman: {{ $paginate->perPage() }}<br>
     <br>
     {{ $paginate->links() }}
   </div>

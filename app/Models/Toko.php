@@ -22,7 +22,7 @@ class Toko extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function detail_transaksi(){
-        return $this->belongsToMany(Detail_Transaksi::class);
+    public function transaksi(){
+        return $this->belongsToMany(Transaksi::class);
     }
 }
