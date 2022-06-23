@@ -39,12 +39,13 @@
                         <div class="form-group">
                             <label for="foto">Foto barang</label>
                             <input type="file" name="foto" class="form-control" value="{{ $barang->foto }}" id="foto" ariadescribedby="foto" >
-                            <img style="width: 100%" src="{{ asset('./storage/'. $barang->foto) }}" alt="">
+                            <img style="width: 100px" src="{{ asset('./storage/'. $barang->foto) }}" alt="">
                         </div>
                         <div class="form-group">
                             <label for="catatan">Catatan</label>
                             <input type="text" name="catatan" class="form-control" id="catatan" value="{{ $barang->catatan }}" ariadescribedby="catatan" >
-                        </div> -->
+                        </div> 
+                        <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

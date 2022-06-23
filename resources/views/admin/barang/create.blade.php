@@ -42,6 +42,7 @@
                             <label for="catatan">Catatan</label>
                             <input type="text" name="catatan" class="form-control" id="catatan" ariadescribedby="catatan">
                         </div>
+                        <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

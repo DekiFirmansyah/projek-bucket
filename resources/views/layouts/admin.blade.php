@@ -27,11 +27,10 @@
     <div class="logo"><a href="#"><img src="images/logo.png" alt="" border="0" /></a></div>
     <div id="menu">
       <ul>
-        <li><a href="admin-home">home</a></li>
+        <li><a href="admin-home">Home</a></li>
         <li><a href="{{ route('barang.index') }}">Data Barang</a></li>
         <li><a href="{{ route('transaksi.index') }}">Data Transaksi</a></li>
         <li><a href="{{ route('user.index') }}">Data User</a></li>
-        <li><a href="contact.html">contact</a></li>
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->name }}

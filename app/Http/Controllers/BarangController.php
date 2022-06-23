@@ -16,7 +16,7 @@ class BarangController extends Controller
     public function index()
     {
         $barang = Barang::all(); // Mengambil semua isi tabel
-        $paginate = Barang::orderBy('id', 'asc')->paginate(3);
+        $paginate = Barang::orderBy('id', 'asc')->paginate(5);
         return view('admin.barang.index', ['barang' => $barang,'paginate'=>$paginate]);
     }
 
@@ -140,6 +140,6 @@ class BarangController extends Controller
     public function destroy($id)
     {
         Barang::where('id', $id)->delete();
-        return redirect()->route('admin.barang.index')->with('success', 'Barang Berhasil Dihapus');
+        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Dihapus');
     }
 }

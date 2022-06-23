@@ -16,7 +16,7 @@ class PembeliController extends Controller
     public function index()
     {
         $pembeli = Pembeli::with('user')->get(); // Mengambil semua isi tabel
-        $paginate = Pembeli::orderBy('id', 'asc')->paginate(3);
+        $paginate = Pembeli::orderBy('id', 'asc')->paginate(5);
         return view('admin.pembeli.index', ['pembeli' => $pembeli,'paginate'=>$paginate]);
     }
 
@@ -132,7 +132,7 @@ class PembeliController extends Controller
         $pembeli->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil DiUpdate');
+        return redirect()->route('user.index')->with('success', 'Pembeli Berhasil DiUpdate');
     }
 
     /**
@@ -144,6 +144,6 @@ class PembeliController extends Controller
     public function destroy($id)
     {
         Pembeli::where('id', $id)->delete();
-        return redirect()->route('pembeli.index')->with('success', 'Pembeli Berhasil Dihapus');
+        return redirect()->route('user.index')->with('success', 'Pembeli Berhasil Dihapus');
     }
 }

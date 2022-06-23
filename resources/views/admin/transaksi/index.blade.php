@@ -3,16 +3,15 @@
 @section('content')
 <div class="row">
         <div class="col-lg-12 margin-tb">
-          <br>
-            <div class="pull-left mt-2">
-                <h2>DATA BARANG</h2>
-            </div>
+        <br>
+          <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Data Transaksi</div>
+     
+            <br><br>
             <div class="pull-left mt-2">
                 <a style="float: right" href="{{ route('laporan_pdf') }}" 
                     class="btn btn-success">Cetak Laporan</a>
             </div>
-            
-            <br>
+            <br><br>
         </div>
         </div>
 
@@ -28,8 +27,9 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <tr>
+    <div class="feat_prod_box_details">
+    <table class="cart_table">
+        <tr class="cart_title">
             <th>ID Transaksi</th>
             <th>Nama Pembeli</th>
             <th>Nama Barang</th>
@@ -39,7 +39,7 @@
             <th>Status</th>
             <th>Catatan</th>
             <th>Waktu</th>
-            <th width="100px">Action</th>
+            <th width="150px">Action</th>
         </tr>
 
         @foreach ($paginate as $trs)
@@ -64,7 +64,7 @@
         </tr>
         @endforeach
     </table>
-
+    <br>
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
     Data Halaman: {{ $paginate->perPage() }}<br>

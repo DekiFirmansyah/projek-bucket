@@ -3,13 +3,12 @@
 @section('content')
   <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left mt-2">
-                <h2>DATA PEMBELI</h2>
-            </div>
-            <div class="float-right my-2">
-            </div>
-        </div>
+            <br>
+        <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Data Pembeli</div>
+        <br>    
     </div>
+    </div>
+    
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -23,8 +22,9 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <tr>
+    <div class="feat_prod_box_details">
+    <table class="cart_table">
+        <tr class="cart_title">
             <th>ID</th>
             <th>Nama</th>
             <th>Email</th>
@@ -32,7 +32,7 @@
             <th>Alamat</th>
             <th>No Telepon</th>
             <th>Foto</th>
-            <th width="320px">Action</th>
+            <th width="170px">Action</th>
         </tr>
 
         @foreach ($paginate as $pbl)
@@ -55,10 +55,10 @@
         </tr>
         @endforeach
     </table>
-
+    <br>
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
-    <!--Data Halaman: {{ $paginate->perPage() }}<br>-->
+    Data Halaman: {{ $paginate->perPage() }}<br>
     <br>
     {{ $paginate->links() }}
   </div>

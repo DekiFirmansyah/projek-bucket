@@ -10,7 +10,7 @@
                         <li class="list-group-item"><b>Harga : </b>{{$barang->harga}}</li>
                         <li class="list-group-item"><b>Kategori : </b>{{$barang->kategori}}</li>
                         <li class="list-group-item"><b>Estimasi Pembuatan : </b>{{$barang->estimasi_pembuatan}}</li>
-                        <li class="list-group-item"><b>Foto Barang: </b><img style="width: 100%" src="{{ asset('./storage/'. $barang->foto) }}" alt=""></li>
+                        <li class="list-group-item"><b>Foto Barang: </b><br><img style="width: 150px" src="{{ asset('./storage/'. $barang->foto) }}" alt=""></li>
                         <li class="list-group-item"><b>Catatan : </b>{{$barang->catatan}}</li>
                     </ul>
                 </div>

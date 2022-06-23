@@ -4,10 +4,9 @@
   <div class="row">
         <div class="col-lg-12 margin-tb">
           <br>
-            <div class="pull-left mt-2">
-                <h2>DATA BARANG</h2>
-            </div>
-            <br>
+          <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Data Barang</div>
+     
+            <br><br><br>
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('barang.create') }}"> Input Barang</a>
             </div>
@@ -58,7 +57,7 @@
         </tr>
         @endforeach
     </table>
-    
+    <br><br>
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
     Data Halaman: {{ $paginate->perPage() }}<br>

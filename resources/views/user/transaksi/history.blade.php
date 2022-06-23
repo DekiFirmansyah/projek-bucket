@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt=""></span>My cart</div>
-      <div class="feat_prod_box_details">
-        <table class="cart_table">
-          <tr class="cart_title">
+<div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt=""></span>History Pembelian</div>
+      
+      <table class="table table-bordered">
+      <tr>
             <th>ID Transaksi</th>
             <th>Nama Pembeli</th>
             <th>Nama Barang</th>
@@ -30,7 +30,7 @@
             
           </tr>
         @endforeach
-        </table>
+    </table>
         <br>
         <a class="btn btn-success mt-3" href="{{ route('pesanan') }}">Kembali</a>
       <div class="clear"></div>
