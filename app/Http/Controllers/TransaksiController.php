@@ -142,27 +142,6 @@ class TransaksiController extends Controller
         -> with('success', 'Transaksi Berhasil Dihapus'); 
     }
 
-    public function total(){
-        $transaksi = Transaksi::with('pembeli')->where('id', $id)->first(); 
-        $pembeli = Pembeli::all(); //mendapatkan data dari tabel pembeli
-         
-        $transaksi = Transaksi::with('barang')->where('id', $id)->first(); 
-        $barang = Barang::all(); //mendapatkan data dari tabel barang
-
-        $total = array();
-        foreach($transaksi as $tr){
-            $subtotal = $tr->harga*$tr->jumlah;
-            array_push($total, $subtotal);
-        }
-        dump($total);
-        return view('transaksi.total', compact('Transaksi'));
-        //barang --> harga barang , harga tambahan
-        //transaksi --> jumlah barang, jumlah tambahan
-        //total = (harga barang * jumlah barang) + (harga tambahan * jumlah tambah)
-        //return total;
-        
-    }
-
     public function laporan_pdf(){
         $transaksi = Transaksi::with('pembeli')->get();
         $transaksi = Transaksi::with('barang')->get();
