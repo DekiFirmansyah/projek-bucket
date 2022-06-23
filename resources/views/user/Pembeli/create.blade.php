@@ -43,7 +43,7 @@
                             <input type="text" name="alamat" class="form-control" id="alamat" ariadescribedby="alamat" >
                         </div>
                         <div class="form-group">
-                            <label for="no telp">No Telepon</label>
+                            <label for="no_telp">No Telepon</label>
                             <input type="text" name="no_telp" class="form-control" id="no_telp" ariadescribedby="no_telp">
                         </div>
                         <div class="form-group">

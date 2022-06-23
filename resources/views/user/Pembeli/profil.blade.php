@@ -10,8 +10,11 @@
             <br>
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('user.create') }}"> Input Profil</a>
+                <a class="btn btn-primary" href="{{ route('user.edit',$pembeli->id) }}">Edit</a>
             </div>
+
         </div>
-        </div>
+</div>
+
 
 @endsection

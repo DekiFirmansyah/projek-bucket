@@ -37,7 +37,7 @@
             <th>Catatan</th>
             <th width="220px">Action</th>
         </tr>
-
+        
         @foreach ($paginate as $brg)
         <tr>
             <td>{{ $brg ->nama }}</td>

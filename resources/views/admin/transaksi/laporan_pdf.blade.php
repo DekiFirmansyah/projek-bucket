@@ -25,12 +25,16 @@
   <div class="row">
     <div class="col-lg-12 margin-tb">
       <div class="text-center mt-2">
-        <h5>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h5>
+        <h5>LAPORAN PENJUALAN TOKO D2 BOUQUET</h5>
         <br>
-        <h5 class="text-center">KARTU HASIL STUDI (KHS)</h5>
+        <h5 class="text-center">DETAIL LAPORAN TRANSAKSI</h5>
       </div>
     </div>
   </div>
+      <h4>Toko  : D2 Bouquet </h4>
+      <h4>Alamat : Jl. Soekarno Hatta No. 12 Malang </h4>
+      <h4>Email : dilde@gmail.com </h4>
+      <h4>No Telepon : 081234098111</h4>
 
   <div class="container">
   

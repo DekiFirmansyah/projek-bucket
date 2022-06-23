@@ -10,6 +10,7 @@ use App\Models\Pembeli;
 class Pembeli extends Model
 {
     protected $table='pembeli';
+    protected $primaryKey='id';
 
     protected $fillable = [
         'user_id',
