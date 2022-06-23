@@ -9,6 +9,7 @@ class Toko extends Model
 {
     use HasFactory;
     protected $table='toko';
+  
 
     protected $fillable = [
         'user_id',
