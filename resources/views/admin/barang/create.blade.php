@@ -18,33 +18,7 @@
                     @endif
                     <form method="post" action="{{ route('barang.store') }}" id="myForm" enctype="multipart/form-data">
                         @csrf
-
-                        <div class="form_group">
-                            <label class="contact"><strong>Nama :</strong></label>
-                            <input type="text" name="nama" class="contact_input" id="nama" ariadescribedby="nama" />
-                        </div>
-                        <div class="form_group">
-                            <label class="contact"><strong>Harga :</strong></label>
-                            <input type="text" name="harga" class="contact_input" id="harga" aria-describedby="harga" />
-                        </div>
-                        <div class="form_group">
-                            <label class="contact"><strong>Kategori:</strong></label>
-                            <input type="text" name="kategori" class="contact_input" id="kategori" ariadescribedby="kategori" />
-                        </div>
-                        <div class="form_group">
-                            <label class="contact"><strong>Estimasi Pembuatan :</strong></label>
-                            <input type="text" name="estimasi_pembuatan" class="contact_input"  id="estimasi_pembuatan" ariadescribedby="estimasi_pembuatan"/>
-                        </div>
-                        <div class="form_group">
-                            <label class="contact"><strong>Foto Profil:</strong></label>
-                            <input type="text" name="foto" class="contact_input" id="foto" ariadescribedby="foto"/>
-                        </div>
-                        <div class="form_group">
-                            <label class="contact"><strong>Catatan :</strong></label>
-                            <input type="text" name="catatan" class="contact_input" id="catatan" ariadescribedby="catatan" />
-                        </div>
-
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" name="nama" class="form-control" id="nama" ariadescribedby="nama" >
                         </div>
@@ -67,7 +41,7 @@
                         <div class="form-group">
                             <label for="catatan">Catatan</label>
                             <input type="text" name="catatan" class="form-control" id="catatan" ariadescribedby="catatan">
-                        </div> -->
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

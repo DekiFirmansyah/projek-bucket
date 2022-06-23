@@ -5,11 +5,11 @@
         <div class="col-lg-12 margin-tb">
           <br>
             <div class="pull-left mt-2">
-            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Daftar Barang</div>
+                <h2>DATA BARANG</h2>
             </div>
             <br>
             <div class="float-right my-2">
-                <a href="{{ route('barang.create') }}" class="btn btn-success"> Input Mahasiswa</a> 
+                <a class="btn btn-success" href="{{ route('barang.create') }}"> Input Barang</a>
             </div>
         </div>
         </div>
@@ -26,9 +26,8 @@
         </div>
     @endif
 
-    <div class="center_content">
-    <div class="left_content">
     <div class="feat_prod_box_details">
+<<<<<<< HEAD
         <table class="cart_table">
           <tr class="cart_title">
             <th width="350px" >Nama</th>
@@ -40,6 +39,19 @@
             <th width="500px">Action</th>
           </tr>
           
+=======
+    <table class="cart_table">
+        <tr class="cart_title">
+            <th width="220px" >Nama</th>
+            <th>Harga</th>
+            <th>Kategori</th>
+            <th>Estimasi Pembuatan</th>
+            <th>Foto</th>
+            <th>Catatan</th>
+            <th width="220px">Action</th>
+        </tr>
+
+>>>>>>> 91a98ad3f1180e4b1be4f0cf1a9af2ea731a80e4
         @foreach ($paginate as $brg)
         <tr>
             <td>{{ $brg ->nama }}</td>
@@ -60,14 +72,22 @@
         </tr>
         @endforeach
     </table>
+<<<<<<< HEAD
 </div>
 </div>
 </div>
+=======
+    
+>>>>>>> 91a98ad3f1180e4b1be4f0cf1a9af2ea731a80e4
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
-    <!--Data Halaman: {{ $paginate->perPage() }}<br>-->
+    Data Halaman: {{ $paginate->perPage() }}<br>
     <br>
     {{ $paginate->links() }}
+<<<<<<< HEAD
 
 
+=======
+    </div>
+>>>>>>> 91a98ad3f1180e4b1be4f0cf1a9af2ea731a80e4
 @endsection
