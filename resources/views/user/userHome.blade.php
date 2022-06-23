@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 91a98ad3f1180e4b1be4f0cf1a9af2ea731a80e4
 @extends('layouts.user')
 
 @section('content')

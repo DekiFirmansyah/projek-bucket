@@ -43,3 +43,4 @@ route::resource('transaksi', TransaksiController::class);
 Route::get('/laporan_pdf',[TransaksiController::class, 'laporan_pdf'])->name('laporan_pdf');
 
 Route::get('/profil',[PembeliController::class, 'profil'])->name('profil');
+
