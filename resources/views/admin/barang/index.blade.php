@@ -40,7 +40,6 @@
             <th width="500px">Action</th>
           </tr>
           
-
         @foreach ($paginate as $brg)
         <tr>
             <td>{{ $brg ->nama }}</td>
@@ -61,14 +60,14 @@
         </tr>
         @endforeach
     </table>
-
-
+</div>
+</div>
+</div>
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
     <!--Data Halaman: {{ $paginate->perPage() }}<br>-->
     <br>
     {{ $paginate->links() }}
-  </div>
-</div>
-</div>
+
+
 @endsection

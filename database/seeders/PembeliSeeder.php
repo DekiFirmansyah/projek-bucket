@@ -17,20 +17,20 @@ class PembeliSeeder extends Seeder
         $pbl = [
             [
                 'user_id' => 2,
-                'nama' => 'Deki Firmansyah',
-                'jenis_kelamin' => 'L',
-                'email'=> 'dekifirmansyah27@gmail.com',
-                'alamat' => 'Griya Shanta 19 No. 282 Lowokwaru',
-                'no_telp' => '081331386946',
-                'foto' => ''
-            ],
-            [
-                'user_id' => 3,
                 'nama' => 'Dilta Febiana',
                 'jenis_kelamin' => 'P',
                 'email'=> 'diltaDiana11@gmail.com',
                 'alamat' => 'Jl. Sengkaling No. 12 Blimbing',
                 'no_telp' => '087781236511',
+                'foto' => ''
+            ],
+            [
+                'user_id' => 3,
+                'nama' => 'Deki Firmansyah',
+                'jenis_kelamin' => 'L',
+                'email'=> 'dekifirmansyah27@gmail.com',
+                'alamat' => 'Griya Shanta 19 No. 282 Lowokwaru',
+                'no_telp' => '081331386946',
                 'foto' => ''
             ],
         ];

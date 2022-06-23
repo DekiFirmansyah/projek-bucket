@@ -53,9 +53,6 @@
     </div>
   </div>
 
-
-<!--============ Content ============-->
-
 @yield('content')
 
 <div id="wrap">
