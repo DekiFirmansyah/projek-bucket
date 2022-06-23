@@ -20,6 +20,13 @@ class BarangController extends Controller
         return view('admin.barang.index', ['barang' => $barang,'paginate'=>$paginate]);
     }
 
+    public function daftar_barang()
+    {
+        $barang = Barang::all(); // Mengambil semua isi tabel
+        $paginate = Barang::orderBy('id', 'asc');
+        return view('user.barang.daftarBarang', ['barang' => $barang,'paginate'=>$paginate]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

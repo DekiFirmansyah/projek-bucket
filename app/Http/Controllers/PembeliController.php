@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
@@ -68,8 +68,6 @@ class PembeliController extends Controller
 
         $user = new User;
         $user->id = $request->get('user');
-
-        //fungsi eloquent untuk menambah data dengan relasi belongsTo
         $pembeli->user()->associate($user);
         $pembeli->save();
 

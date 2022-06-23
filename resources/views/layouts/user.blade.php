@@ -29,8 +29,8 @@
       <ul>
         <li><a href="home">home</a></li>
         <li><a href="about">about us</a></li>
-        <li><a href="category.html">Bouquet</a></li>
-        <li><a href="details.html">Transaksi</a></li>
+        <li><a href="{{ route('daftar_barang') }}">Bouquet</a></li>
+        <li><a href="{{ route('pesanan') }}">Transaksi</a></li>
         <li><a href="{{ route('profil') }}">Profil</a></li>
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -53,10 +53,42 @@
     </div>
   </div>
 
-
-<!--============ Content ============-->
-
-@yield('content')
+<div class="center_content">
+    <div class="left_content">
+      @yield('content')
+    </div>
+    <!--end of left content-->
+    <div class="right_content">
+      <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" /></span>About Our Shop</div>
+      <div class="about">
+        <p> <img src="images/about.gif" alt="" class="right" /> D2 BOUQUET adalah salah satu online shop berbasis website dimana disini menyediakan berbagai jenis bouquet yang tertera pada website serta dapat memesan buket sesuai request pembeli. </p>
+      </div>
+      <div class="right_box">
+        <div class="title"><span class="title_icon"><img src="images/bullet4.gif" alt="" /></span>Produk terbaik</div>
+        <div class="new_prod_box"> <a href="#"></a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb1.gif" alt="" class="thumb" border="0" /></a> </div>
+        </div>
+        <div class="new_prod_box"> <a href="#"></a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/prod2.gif" alt="" class="thumb" border="0" /></a> </div>
+        </div>
+        <div class="new_prod_box"> <a href="#"></a>
+          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/prod1.gif" alt="" class="thumb" border="0" /></a> </div>
+        </div>
+      </div>
+      <div class="right_box">
+        <div class="title"><span class="title_icon"><img src="images/bullet5.gif" alt="" /></span>Nama Produk</div>
+        <ul class="list">
+          <li><a href="#">Bucket Bunga</a></li>
+          <li><a href="#">Bucket Boneka</a></li>
+          <li><a href="#">Bucket snack</a></li>
+          <li><a href="#">Bucket uang</a></li>
+          <li><a href="#">Bucket jilbab atau barang lainnya</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--end of right content-->
+    <div class="clear"></div>
+  </div>
 
 <div class="footer">
     <div class="left_footer"><img src="{{ asset('images/footer_logo.gif') }}" alt="" /><br />

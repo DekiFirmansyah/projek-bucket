@@ -35,10 +35,16 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        $pembeli = Pembeli::all();//mendapatkan data dari tabel pembeli
+        $pembeli = Pembeli::all();
         $barang = Barang::all();
-        return view('transaksi.create',['pembeli' => $pembeli, 'barang' => $barang]); 
+        $toko = Toko::all();
+        return view('user.transaksi.checkout',['pembeli' => $pembeli, 'barang' => $barang, 'toko' => $toko]); 
     
+    }
+
+    public function pesanan()
+    {
+        return view('user.transaksi.index');
     }
 
     /**
@@ -51,31 +57,33 @@ class TransaksiController extends Controller
     {
         //nambah transaksi baru
         $request->validate([
-            'pembeli_id' => 'required',
-            'barang_id' => 'required',
-            'toko_id' => 'required',
+            'pembeli' => 'required',
+            'toko' => 'required',
+            'barang' => 'required',
+            'catatan' => 'required',
         ]);
         
 
         $transaksi = new Transaksi;
-        $transaksi->id = $request->get('id ');
-        $transaksi->jumlah = $request->get('jumlah');
-        $transaksi->total_harga = $request->get('total_harga');
+        $transaksi->catatan = $request->get('catatan');
         $transaksi->save();
 
         $pembeli = new Pembeli;
-        $pembeli->id = $request->get('Pembeli');
-
+        $pembeli->id = $request->get('pembeli');
         $transaksi->pembeli()->associate($pembeli);
         $transaksi->save();  
         
-        $barang = new Barang;
-        $barang->id = $request->get('Barang');
+        $toko = new Toko;
+        $toko->id = $request->get('toko');
+        $transaksi->toko()->associate($toko);
+        $transaksi->save();
 
+        $barang = new Barang;
+        $barang->id = $request->get('barang');
         $transaksi->barang()->associate($barang);
         $transaksi->save(); 
 
-        return redirect()->route('transaksi.index') 
+        return redirect()->route('transaksi.show', $pembeli -> id) 
             ->with('success', 'Transaksi Berhasil Dilakukan'); 
     }
 
@@ -87,9 +95,8 @@ class TransaksiController extends Controller
      */
     public function show($id)
     {
-        $transaksi = Transaksi::with('pembeli')->where('id', $id)->first();
-        $transaksi = Transaksi::with('barang')->where('id', $id)->first();
-        return view('transaksi.detail', ['transaksi' => $transaksi]); 
+        $transaksi = Transaksi::all();
+        return view('user.transaksi.history', ['transaksi' => $transaksi]); 
     }
 
     /**
@@ -149,14 +156,4 @@ class TransaksiController extends Controller
         
     }
 
-    public function cetak_pdf($nim){
-        $mahasiswa = Mahasiswa::where('nim', $nim)->first();
-        $nilai = Mahasiswa_Matakuliah::where('mahasiswa_id', $mahasiswa->id_mahasiswa)
-                                       ->with('matakuliah')
-                                       ->with('mahasiswa')
-                                       ->get();
-        $nilai->mahasiswa = Mahasiswa::with('kelas')->where('nim', $nim)->first();
-        $pdf = PDF::loadview('mahasiswa.nilai_pdf', compact('nilai'));
-        return $pdf->stream();
-    }
 }

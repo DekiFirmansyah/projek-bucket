@@ -42,4 +42,8 @@ route::resource('transaksi', TransaksiController::class);
 
 Route::get('/laporan_pdf',[TransaksiController::class, 'laporan_pdf'])->name('laporan_pdf');
 
+Route::get('/pesanan',[TransaksiController::class, 'pesanan'])->name('pesanan');
+
 Route::get('/profil',[PembeliController::class, 'profil'])->name('profil');
+
+Route::get('/daftar_barang',[BarangController::class, 'daftar_barang'])->name('daftar_barang');

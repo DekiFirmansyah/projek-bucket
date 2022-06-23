@@ -27,22 +27,9 @@
     @endif
 
     <div class="feat_prod_box_details">
-<<<<<<< HEAD
-        <table class="cart_table">
-          <tr class="cart_title">
-            <th width="350px" >Nama</th>
-            <th width="300">Harga</th>
-            <th width="350px">Kategori</th>
-            <th width="350px">Estimasi Pembuatan</th>
-            <th width="450px">Foto</th>
-            <th width="400px">Catatan</th>
-            <th width="500px">Action</th>
-          </tr>
-          
-=======
     <table class="cart_table">
         <tr class="cart_title">
-            <th width="220px" >Nama</th>
+            <th>Nama</th>
             <th>Harga</th>
             <th>Kategori</th>
             <th>Estimasi Pembuatan</th>
@@ -51,7 +38,6 @@
             <th width="220px">Action</th>
         </tr>
 
->>>>>>> 91a98ad3f1180e4b1be4f0cf1a9af2ea731a80e4
         @foreach ($paginate as $brg)
         <tr>
             <td>{{ $brg ->nama }}</td>
@@ -72,22 +58,11 @@
         </tr>
         @endforeach
     </table>
-<<<<<<< HEAD
-</div>
-</div>
-</div>
-=======
     
->>>>>>> 91a98ad3f1180e4b1be4f0cf1a9af2ea731a80e4
     Current Page: {{ $paginate->currentPage() }}<br>
     Jumlah Data: {{ $paginate->total() }}<br>
     Data Halaman: {{ $paginate->perPage() }}<br>
     <br>
     {{ $paginate->links() }}
-<<<<<<< HEAD
-
-
-=======
     </div>
->>>>>>> 91a98ad3f1180e4b1be4f0cf1a9af2ea731a80e4
 @endsection
