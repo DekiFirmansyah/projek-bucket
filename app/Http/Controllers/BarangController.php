@@ -68,7 +68,7 @@ class BarangController extends Controller
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.barang.index')->with('success', 'Barang Berhasil Ditambahkan');
+        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**

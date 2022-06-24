@@ -31,12 +31,14 @@
       </div>
     </div>
   </div>
-      <h4>Toko  : D2 Bouquet </h4>
-      <h4>Alamat : Jl. Soekarno Hatta No. 12 Malang </h4>
-      <h4>Email : dilde@gmail.com </h4>
-      <h4>No Telepon : 081234098111</h4>
-
-  <div class="container">
+  <br><br>
+  <div class="container-fluid">
+      <h6>Toko  : D2 Bouquet </h6>
+      <h6>Alamat : Jl. Soekarno Hatta No. 12 Malang </h6>
+      <h6>Email : dilde@gmail.com </h6>
+      <h6>No Telepon : 081234098111</h6>
+      <br>
+  
   
   <table class="table table-bordered">
         <tr>
