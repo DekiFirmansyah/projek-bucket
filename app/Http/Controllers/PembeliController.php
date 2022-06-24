@@ -27,7 +27,7 @@ class PembeliController extends Controller
      */
     public function create()
     {
-        $user = User::all(); //mendapatkan data dari tabel kelas
+        $user = User::all(); //mendapatkan data dari tabel user
         return view('user.pembeli.create',['user' => $user]);
     }
 
