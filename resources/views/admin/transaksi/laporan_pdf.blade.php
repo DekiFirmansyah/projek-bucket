@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -41,6 +42,7 @@
   
   
   <table class="table table-bordered">
+    <caption>Tabel Laporan Penjualan</caption>
         <tr>
             <th>ID Transaksi</th>
             <th>Nama Pembeli</th>

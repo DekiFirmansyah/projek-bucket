@@ -21,11 +21,8 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksi = Transaksi::with('pembeli')->get();
-        $transaksi = Transaksi::with('barang')->get();
-        $transaksi = Transaksi::with('toko')->get();
         $paginate = Transaksi::orderBy('id', 'asc')->paginate(5);
-        return view('admin.transaksi.index', ['transaksi' => $transaksi,'paginate'=>$paginate]);
+        return view('admin.transaksi.index', ['paginate'=>$paginate]);
     }
 
     /**

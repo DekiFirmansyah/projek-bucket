@@ -24,6 +24,7 @@
 
     <div class="feat_prod_box_details">
     <table class="cart_table">
+        <caption>Tabel Pembeli</caption>
         <tr class="cart_title">
             <th>ID</th>
             <th>Nama</th>
@@ -32,7 +33,7 @@
             <th>Alamat</th>
             <th>No Telepon</th>
             <th>Foto</th>
-            <th width="170px">Action</th>
+            <th style="width: 170px;">Action</th>
         </tr>
 
         @foreach ($paginate as $pbl)

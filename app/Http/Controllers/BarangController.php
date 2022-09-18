@@ -13,6 +13,9 @@ class BarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    const BARANG_INDEX = 'barang.index';
+
     public function index()
     {
         $barang = Barang::all(); // Mengambil semua isi tabel
@@ -68,7 +71,7 @@ class BarangController extends Controller
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
+        return redirect()->route(BARANG_INDEX)->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
@@ -128,7 +131,7 @@ class BarangController extends Controller
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Ditambahkan');
+        return redirect()->route(BARANG_INDEX)->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
@@ -140,6 +143,6 @@ class BarangController extends Controller
     public function destroy($id)
     {
         Barang::where('id', $id)->delete();
-        return redirect()->route('barang.index')->with('success', 'Barang Berhasil Dihapus');
+        return redirect()->route(BARANG_INDEX)->with('success', 'Barang Berhasil Dihapus');
     }
 }
