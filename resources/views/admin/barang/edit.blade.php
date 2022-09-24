@@ -33,11 +33,11 @@
                             <input type="text" name="kategori" class="form-control" id="kategori" value="{{ $barang->kategori }}" aria-describedby="kategori">
                         </div>
                         <div class="form-group">
-                            <label for="estimasi pembuatan">Jurusan</label>
+                            <label for="estimasi pembuatan">Estimasi Pembuatan</label>
                             <input type="text" name="estimasi_pembuatan" class="form-control" id="estimasi_pembuatan" value="{{ $barang->estimasi_pembuatan }}" aria-describedby="estimasi_pembuatan">
                         </div>
                         <div class="form-group">
-                            <label for="foto">Foto barang</label>
+                            <label for="foto">Foto Barang</label>
                             <input type="file" name="foto" class="form-control" value="{{ $barang->foto }}" id="foto" ariadescribedby="foto" >
                             <img style="width: 100px" src="{{ asset('./storage/'. $barang->foto) }}" alt="">
                         </div>
