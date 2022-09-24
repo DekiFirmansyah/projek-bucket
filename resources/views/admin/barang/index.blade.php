@@ -27,6 +27,7 @@
 
     <div class="feat_prod_box_details">
     <table class="cart_table">
+        <caption>Tabel Barang</caption>
         <tr class="cart_title">
             <th>Nama</th>
             <th>Harga</th>
@@ -34,7 +35,7 @@
             <th>Estimasi Pembuatan</th>
             <th>Foto</th>
             <th>Catatan</th>
-            <th width="220px">Action</th>
+            <th style="width: 220px;">Action</th>
         </tr>
         
         @foreach ($paginate as $brg)

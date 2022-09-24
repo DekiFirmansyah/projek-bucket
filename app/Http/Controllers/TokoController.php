@@ -14,11 +14,14 @@ class TokoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    const TOKO_INDEX = 'toko.index';
+    
     public function index()
     {
         $toko = Toko::all(); // Mengambil semua isi tabel
         $paginate = Toko::orderBy('id', 'asc')->paginate(3);
-        return view('toko.index', ['toko' => $toko,'paginate'=>$paginate]);
+        return view(TOKO_INDEX, ['toko' => $toko,'paginate'=>$paginate]);
     }
 
     /**
@@ -54,7 +57,7 @@ class TokoController extends Controller
         $toko->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('toko.index')->with('success', 'Toko Berhasil Ditambahkan');
+        return redirect()->route(TOKO_INDEX)->with('success', 'Toko Berhasil Ditambahkan');
     }
 
     /**
@@ -105,7 +108,7 @@ class TokoController extends Controller
         $toko->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('toko.index')->with('success', 'Toko Berhasil Ditambahkan');
+        return redirect()->route(TOKO_INDEX)->with('success', 'Toko Berhasil Ditambahkan');
     }
 
     /**

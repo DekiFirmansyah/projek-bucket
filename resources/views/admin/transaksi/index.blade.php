@@ -29,6 +29,7 @@
 
     <div class="feat_prod_box_details">
     <table class="cart_table">
+        <caption>Tabel Transaksi Penjualan</caption>
         <tr class="cart_title">
             <th>ID Transaksi</th>
             <th>Nama Pembeli</th>
@@ -39,7 +40,7 @@
             <th>Status</th>
             <th>Catatan</th>
             <th>Waktu</th>
-            <th width="150px">Action</th>
+            <th style="width:150px;">Action</th>
         </tr>
 
         @foreach ($paginate as $trs)
