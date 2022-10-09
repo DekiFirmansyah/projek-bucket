@@ -70,7 +70,7 @@
       </div>
 
       <div class="form_row">
-              <input type="submit" class="register" value="login">
+              <input id="login" type="submit" class="register" value="login">
               <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></p>
       </div>

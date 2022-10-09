@@ -35,7 +35,7 @@
                             <input type="text" name="estimasi_pembuatan" class="form-control" id="estimasi_pembuatan" ariadescribedby="estimasi_pembuatan" >
                         </div>
                         <div class="form-group">
-                            <label for="foto">Foto Profil</label>
+                            <label for="foto">Foto Barang</label>
                             <input type="file" name="foto" class="form-control" id="foto" ariadescribedby="foto" >
                         </div>
                         <div class="form-group">
